@@ -23,8 +23,9 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  
-  
+  gem 'devise'
+
+
 end
 
 group :production do
