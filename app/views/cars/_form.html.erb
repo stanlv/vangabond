@@ -1,0 +1,21 @@
+<%= simple_form_for(@car) do |f| %>
+
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :brand, label: 'Brand', placeholder: 'Ford' %>
+    <%= f.input :model, placeholder: 'Mustang' %>
+    <%= f.input :seats, collection: 1..9 %>
+    <%= f.input :category, :collection => %w[Surf Family Camping WineTour Sightseeing Adventure] %>
+    <%= f.input :year_of_production%>
+    <%= f.input :description, placeholder: 'Tell us more about your roadtrip vehicle' %>
+    <%= f.input :location, placeholder: 'Phoenix, Arizona' %>
+    <%= f.input :price_per_day, placeholder: 134%>€
+    <%= f.input :km, placeholder: '36,000' %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
