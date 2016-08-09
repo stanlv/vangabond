@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'devise'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'binding_of_caller'
@@ -23,12 +25,11 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
-  gem 'devise'
+
 
 
 end
 
 group :production do
   gem 'rails_12factor'
-  gem 'devise'
 end
