@@ -1,0 +1,8 @@
+<h2><%= @car.brand %> <%= @car.model %></h2>
+
+<p><%= @car.brand %> <%= @car.model %>, <%= @car.seats %> seats (<%= @car.year_of_production %>)</p>
+<p>Pickup: <%= @car.location %></p>
+<p><%= @car.description %></p>
+<p>Price per day: <%= @car.price_per_day %> €</p>
+
+<%= link_to 'Back to all', cars_path %>
