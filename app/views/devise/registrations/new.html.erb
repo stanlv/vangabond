@@ -4,9 +4,9 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email, required: true, autofocus: true, placeholder: 'Vanganer@domain.com' %>
+    <%= f.input :password, required: true,  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: 'Vanganer password'%>
+    <%= f.input :password_confirmation, required: true, placeholder: 'Vanganer password' %>
   </div>
 
   <div class="form-actions">
