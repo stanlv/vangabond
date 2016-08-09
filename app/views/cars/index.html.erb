@@ -1,0 +1,11 @@
+<h2>All cars</h2>
+<br>
+<br>
+
+<% @cars.each do |car| %>
+  <p><strong><%= car.brand %> <%= car.model %></strong>, <%= car.seats %> seats (<%= car.year_of_production %>)</p>
+  <p>Pickup: <%= car.location %></p>
+  <p><%= car.description %></p>
+  <p>Price per day: <%= car.price_per_day %> €</p>
+  <hr>
+<% end %>
