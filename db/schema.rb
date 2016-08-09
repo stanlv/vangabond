@@ -11,10 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 20160809134143) do
+=======
 ActiveRecord::Schema.define(version: 20160809110746) do
+>>>>>>> 126e41c2d4bc5f6248a3fe08dc58ec4ce60ed812
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.integer  "seats"
+    t.string   "brand"
+    t.string   "model"
+    t.date     "year_of_production"
+    t.text     "description"
+    t.string   "location"
+    t.string   "category"
+    t.integer  "price_per_day"
+    t.integer  "km"
+    t.string   "features"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "cars", ["user_id"], name: "index_cars_on_user_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "picture"
+    t.integer  "car_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "images", ["car_id"], name: "index_images_on_car_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -41,4 +72,6 @@ ActiveRecord::Schema.define(version: 20160809110746) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "cars", "users"
+  add_foreign_key "images", "cars"
 end
