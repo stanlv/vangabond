@@ -6,4 +6,4 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
-Car.create(seats: 2, brand: "VW", model: "combi", year_of_production: "1995-08-04", description: "Best car ever", location: "Lisbon", category: "Surf", price_per_day: 56, km: 58000, user_id: 1)
+Car.create(seats: 2, brand: "VW", model: "combi", year_of_production: "1995-08-04", description: "Best car ever", location: "Lisbon", category: "Surf", price_per_day: 56, km: 58000, user_id: User.first.id)
