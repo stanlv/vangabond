@@ -4,5 +4,6 @@
 <p>Pickup: <%= @car.location %></p>
 <p><%= @car.description %></p>
 <p>Price per day: <%= @car.price_per_day %> €</p>
+<%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %>
 
 <%= link_to 'Back to all', cars_path %>
