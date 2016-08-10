@@ -3,6 +3,14 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
+ .padded {
+  padding: 100px 0;
+}
+.wrapper-grey {
+  background: #DDD;
+}
+
+
  /* Banner design */
 .banner {
   color: white;
@@ -72,4 +80,25 @@
 }
 .card-link:hover{
   opacity: 0.1;
+}
+
+.why-vangabond {
+  text-align: center;
+}
+
+.why-vangabond span {
+  color: #8EBCB2
+}
+
+.why-vangabond h1 {
+
+
+}
+
+.why-vangabond h2 {
+
+}
+
+.why-vangabond p {
+
 }
