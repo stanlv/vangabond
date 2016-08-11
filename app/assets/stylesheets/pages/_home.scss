@@ -15,7 +15,7 @@
 .banner {
   color: white;
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
@@ -29,9 +29,9 @@
 }
 .banner p {
   font-size: 25px;
-  font-weight: lighter;
-  color: rgba(255, 255, 255, 0.7);
+  color: white;
   margin-bottom: 50px;
+
 }
 
 .card {

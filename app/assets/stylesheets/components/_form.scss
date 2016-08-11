@@ -5,6 +5,47 @@
   border-radius: 6px;
   border-width: 2px;
   margin: 0 auto;
-  background-color: #eee;
+  background-color: #e3f4ed;
   padding: 10px;
 }
+
+.cars-form-btn {
+  padding: 0 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  background-color: #8EBCB2;
+  color: white;
+  font-size: 14px;
+  border: 2px solid #8EBCC2;
+}
+
+.cars-form-btn:hover {
+  color: white;
+  background: #8ECCB2;
+  border-color: #8EBCC2;
+}
+
+// .car_year_of_production {
+//   display: inline;
+//   margin: 0 0;
+
+//   div {
+//       display: inline;
+//       margin: 0 0 0 0;
+//   }
+// }
+
+// .car_seats {
+//   display: inline;
+//   margin: 0 0;
+
+//   div {
+//       display: inline;
+//       margin: 0 0 0 0;
+//   }
+// }
+
+//   .select {
+//     display: inline;
+//     margin: 0 0 0 0;
+//   }

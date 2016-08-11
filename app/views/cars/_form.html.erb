@@ -5,21 +5,22 @@
   <div class="form-inputs">
     <%= f.input :brand, label: 'Brand', placeholder: 'Volkswagen' %>
     <%= f.input :model, placeholder: 'Combi' %>
-    <%= f.input :seats, collection: 1..9 %>
-    <%= f.input :category, :collection => %w[Surf Family Camping WineTour Sightseeing Adventure] %>
+    <%= f.input :seats, collection: 1..9, input_html: {style: "width: 120px", class: "seats-select"} %>
     <%= f.input :year_of_production, as: :date, start_year: Date.today.year - 50,
     end_year: Date.today.year - 0, discard_day: true, discard_month: true%>
+    <%= f.input :category, :collection => %w[Surf Family Camping WineTour Sightseeing Adventure], as: :check_boxes %>
+
     <%= f.input :description, placeholder: 'Tell us more about your roadtrip vehicle' %>
     <%= f.input :location, placeholder: 'Phoenix, Arizona' %>
-    <%= f.input :price_per_day, placeholder: 134%>€
-    <%= f.input :km, placeholder: '77,000' %>
+    <%= f.input :price_per_day, placeholder: "in €", input_html: {style: "width: 120px"}%>
+    <%= f.input :km, placeholder: '77,000', input_html: {style: "width: 120px"} %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "cars-form-btn" %>
   </div>
   <% end %>
 
