@@ -1,4 +1,4 @@
-<%= simple_form_for(@car) do |f| %>
+  <%= simple_form_for(@car) do |f| %>
 
   <%= f.error_notification %>
 
@@ -14,11 +14,14 @@
     <%= f.input :price_per_day, placeholder: 134%>€
     <%= f.input :km, placeholder: '77,000' %>
     <%= f.input :photo %>
-     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :photo_cache, as: :hidden %>
 
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
-<% end %>
+  <% end %>
+
+
+
