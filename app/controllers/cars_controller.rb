@@ -15,7 +15,11 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(car_params)
     @car.save
-    redirect_to car_path(@car)
+      if @car.save
+        redirect_to cars_path(@car), notice: 'Van was successfully created.'
+      else
+        render :new
+      end
   end
 
   def edit
@@ -23,12 +27,13 @@ class CarsController < ApplicationController
 
   def update
     @car.update(car_params)
-    redirect_to car_path(@car)
+    redirect_to car_path(@car), notice: 'Van was successfully updated.'
+      else
   end
 
   def destroy
     @car.destroy
-    redirect_to cars_path
+    redirect_to cars_path, notice: 'Van was successfully destroyed.'
   end
 
 
@@ -37,7 +42,7 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:seats, :brand, :model, :year_of_production, :description, :location, :category, :price_per_day, :km, :features, :photo, :photo_cache)
+    params.require(:car).permit(:seats, :brand, :model, :year_of_production, :description, :location, :category, :price_per_day, :km, photos: [])
   end
 
   def set_car
