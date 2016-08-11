@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :omniauthable, omniauth_providers: [:facebook]
   has_many :cars
   validates :email, uniqueness: true
+   has_attachment  :avatar, accept: [:jpg, :png, :gif]
 
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
