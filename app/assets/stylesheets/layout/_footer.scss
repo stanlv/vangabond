@@ -1,9 +1,11 @@
 /* Footer design */
 #footer {
-  background-color: black;
+  display: block;
   padding: 30px 20px;
   color: #999999;
   margin-top: 15px;
+  padding: 80 30 80 30;
+  height: 100px;
 }
 
 #footer a {

@@ -1,39 +1,48 @@
-<h2>Hi <%= @user.email%> please give us more details about you </h2>
+<h2 class="text-center">Hi <%= @user.email%> please give us more details about you </h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <div class="vangabond-form">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :first_name, required: true, autofocus: true, placeholder: 'Patrick' %>
-    <%= f.input :last_name, required: true, autofocus: true, placeholder: 'Swayze' %>
-    <%= f.input :date_of_birth,  as: :date, start_year: Date.today.year - 60,
-    end_year: Date.today.year - 18, discard_day: false,
-    order: [:day, :month, :year] %>
-    <%= f.input :driving_license, required: true, autofocus: true, placeholder: 'Ask the police'  %>
-    <%= f.input :date_of_issue,  as: :date, start_year: Date.today.year - 60,
-    end_year: Date.today.year - 2, discard_day: false,
-    order: [:day, :month, :year] %>
-     <%= f.input :location, required: false, autofocus: true, placeholder: 'Ask the barman' %>
-     <%= f.input :avatar, as: :attachinary %>
+        <div class="form-inputs">
+          <%= f.input :email, required: true, autofocus: true %>
+          <%= f.input :first_name, required: true, autofocus: true, placeholder: 'Patrick' %>
+          <%= f.input :last_name, required: true, autofocus: true, placeholder: 'Swayze' %>
+          <%= f.input :date_of_birth,  as: :date, start_year: Date.today.year - 60,
+          end_year: Date.today.year - 18, discard_day: false,
+          order: [:day, :month, :year] %>
+          <%= f.input :driving_license, required: true, autofocus: true, placeholder: 'Ask the police'  %>
+          <%= f.input :date_of_issue,  as: :date, start_year: Date.today.year - 60,
+          end_year: Date.today.year - 2, discard_day: false,
+          order: [:day, :month, :year] %>
+          <%= f.input :location, required: false, autofocus: true, placeholder: 'Ask the barman' %>
+          <%= f.input :avatar, as: :attachinary %>
 
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+          <% end %>
 
-      <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
-      <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
+          <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+          <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+          <%= f.input :password_confirmation, required: false %>
+        </div>
+
+        <div class="form-actions">
+        <%= f.button :submit, "Update", class: "vangabond-form-btn" %>
+        </div>
+        <% end %>
+
+        <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+        <%= link_to "Back", :back %>
+      </div>
+
+
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
