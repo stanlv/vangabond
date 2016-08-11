@@ -12,13 +12,13 @@
     <%= f.input :description, placeholder: 'Tell us more about your roadtrip vehicle' %>
     <%= f.input :location, placeholder: 'Phoenix, Arizona' %>
     <%= f.input :price_per_day, placeholder: 134%>€
-    <%= f.input :km, placeholder: '77,000' %>
-    <%= f.input :photo %>
-     <%= f.input :photo_cache, as: :hidden %>
+    <%= f.input :km, label: 'in thousands Km', placeholder: '100' %>
+    <%= f.input :photos, as: :attachinary %>
+    <%= f.button :submit %>
+
 
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
   </div>
 <% end %>

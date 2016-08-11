@@ -1,9 +1,15 @@
 <h2><%= @car.brand %> <%= @car.model %></h2>
 
-<p><%= @car.brand %> <%= @car.model %>, <%= @car.seats %> seats (<%= @car.year_of_production %>)</p>
+<p><%= @car.brand %> <%= @car.model %>, <%= @car.seats %> seats</p>
+<p>Made in: <%= @car.year_of_production.strftime('%Y')%></p>
+<p>Current Km: <%= @car.km %>.000</p>
 <p>Pickup: <%= @car.location %></p>
-<p><%= @car.description %></p>
+<p> Details: <%= @car.description %></p>
 <p>Price per day: <%= @car.price_per_day %> €</p>
-<%= cl_image_tag @car.photo, height: 300, width: 400, crop: :fill %>
+<% @car.photos.each do |photo| %>
+<%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+<% end %>
+<%= link_to 'edit', edit_car_path(@car) %>
 
 <%= link_to 'Back to all', cars_path %>
+

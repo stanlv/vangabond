@@ -18,7 +18,9 @@ gem 'autoprefixer-rails'
 gem 'devise'
 gem 'omniauth-facebook'
 gem 'cloudinary', '1.1.0'
-gem 'carrierwave'
+gem "attachinary", "1.3.1"
+gem "jquery-fileupload-rails"
+gem "coffee-rails"
 
 group :development, :test do
   gem 'binding_of_caller'
