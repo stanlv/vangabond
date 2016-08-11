@@ -1,5 +1,13 @@
-<h2>Edit your <%= @car.brand %> <%= @car.model%></h2>
+<<<<<<< HEAD
+<h2 class="text-center">Edit your <%= @car.brand %> <%= @car.model%></h2>
 <%= link_to 'Delete your van', @car, method: :delete, data: { confirm: 'Are you sure?' } %>
 
-<%= render 'form' %>
-
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-xs-offset-3">
+      <div class="car-form">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>
