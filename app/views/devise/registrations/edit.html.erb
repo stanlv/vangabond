@@ -15,6 +15,7 @@
     end_year: Date.today.year - 2, discard_day: false,
     order: [:day, :month, :year] %>
      <%= f.input :location, required: false, autofocus: true, placeholder: 'Ask the barman' %>
+     <%= f.input :avatar, as: :attachinary %>
 
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
