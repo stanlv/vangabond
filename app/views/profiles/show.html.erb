@@ -1,0 +1,23 @@
+<h2> Glad to see u there</h2>
+
+<% if current_user.avatar? %>
+<%=cl_image_tag(@user.avatar.path, { size: '70x70', crop: :thumb, gravity: :face }) %>
+<% elsif %>
+<%= image_tag current_user.facebook_picture_url %>
+<% else %>
+<%= image_tag "logo.png" %>
+<% end %>
+
+<p>see below the details about your profile </p>
+<p> First name: <%= @user.first_name %> </p>
+<p> Last name: <%= @user.last_name %> </p>
+<p> Your email: <%= @user.email %></p>
+<p> Birthday: <%= @user.date_of_birth %></p>
+<p> Home: <%= @user.location %></p>
+<p> Driving Licence: <%= @user.driving_license %></p>
+<p> Date of issue: <%= @user.date_of_issue %></p>
+
+
+<%= link_to 'Edit my profile', edit_user_registration_path%>
+
+<%= link_to 'Add a van', new_car_path %>
