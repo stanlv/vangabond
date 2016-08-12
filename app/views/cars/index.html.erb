@@ -1,22 +1,27 @@
 <div class="container">
   <div class="row">
-<% @cars.each do |car| %>
 
-   <div class="col-xs-6 col-md-4">
-    <div class="thumbnail">
-      <h3><strong>  In <%= car.location %> <%= car.category %> <%= car.brand %> <%= car.model %></strong>, <%= car.seats %> seats</h3>
-      <img <%= cl_image_tag car.photos.first.path, width: 300, height: 200, crop: :fill %>
-      <div class="caption">
-        <p>Made in : <%= car.year_of_production.strftime('%Y')%> </p>
-        <p> Current Km : <%= car.km %>.000 Details: <%= car.description %> for <%= car.price_per_day %> € per day </p>
-        <p>
-        <%= link_to 'See More', root_path , class:"btn btn-default" %>
-        <%= link_to 'Book Now', root_path, class:"btn btn-primary" %>
-        </p>
+  <% if @cars.empty? %>
+    <h2>Sorry, none of our Vangabonds matched your queries</h2>
+  <% else %>
+    <% @cars.each do |car| %>
+
+      <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+          <h3><strong>  In <%= car.country %> <%= car.category %> <%= car.brand %> <%= car.model %></strong>, <%= car.seats %> seats</h3>
+          <img <%= cl_image_tag car.photos.first.path, width: 300, height: 200, crop: :fill %>
+          <div class="caption">
+          <p>Made in : <%= car.year_of_production.strftime('%Y')%> </p>
+          <p> Current Km : <%= car.km %>.000 Details: <%= car.description %> for <%= car.price_per_day %> € per day </p>
+          <p>
+          <%= link_to 'See More', root_path , class:"btn btn-default" %>
+          <%= link_to 'Book Now', root_path, class:"btn btn-primary" %>
+          </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <% end %>
+    <% end %>
+    <% end %>
 </div>
 </div>
 

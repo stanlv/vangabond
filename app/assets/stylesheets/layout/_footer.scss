@@ -2,18 +2,21 @@
 #footer {
   display: block;
   padding: 30px 20px;
-  color: #999999;
-  margin-top: 15px;
+  color: #8eccb2;
+  // margin-top: 15px;
   padding: 80 30 80 30;
   height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:  center;
 }
 
 #footer a {
-  color: #999999;
+  color: #8eccb2;
   letter-spacing: 20px;
   transition: color 0.2s ease;
 }
 
 #footer a:hover {
-  color: #285E8E;
+  color: #8ecab9;
 }
