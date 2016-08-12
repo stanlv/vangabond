@@ -11,7 +11,7 @@
     <%= f.input :category, :collection => %w[Surf Family Camping WineTour Sightseeing Adventure], as: :check_boxes %>
 
     <%= f.input :description, placeholder: 'Tell us more about your roadtrip vehicle' %>
-    <%= f.input :location, placeholder: 'Phoenix, Arizona' %>
+    <%= f.country_select(:country) %>
     <%= f.input :price_per_day, placeholder: "in €", input_html: {style: "width: 120px"}%>
     <%= f.input :km, label: "Km in thousands", placeholder: '77 for 77,000', input_html: {style: "width: 120px"} %>
     <%= f.input :photos, as: :attachinary %>

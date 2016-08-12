@@ -3,8 +3,8 @@
 <p><%= @car.brand %> <%= @car.model %>, <%= @car.seats %> seats</p>
 <p>Made in: <%= @car.year_of_production.strftime('%Y')%></p>
 <p>Current Km: <%= @car.km %>.000</p>
-<p>Pickup: <%= @car.location %></p>
-<p> Details: <%= @car.description %></p>
+<p>Pickup: <%= @car.country %></p>
+<p>Details: <%= @car.description %></p>
 <p>Price per day: <%= @car.price_per_day %> €</p>
 <% @car.photos.each do |photo| %>
 <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>

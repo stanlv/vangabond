@@ -2,7 +2,12 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.all
+    #binding.pry
+    if params[:search]
+      @cars = Car.search(params[:search])
+    else
+      @cars = Car.all
+    end
   end
 
   def show
@@ -42,7 +47,8 @@ class CarsController < ApplicationController
   private
 
   def car_params
-    params.require(:car).permit(:seats, :brand, :model, :year_of_production, :description, :location, :category, :price_per_day, :km, photos: [])
+    #params.permit(:seats, :country, :category)
+    params.require(:car).permit(:seats, :brand, :model, :year_of_production, :description, :country, :price_per_day, :km, photos: [], category: [])
   end
 
   def set_car

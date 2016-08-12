@@ -21,6 +21,7 @@ gem 'cloudinary', '1.1.0'
 gem "attachinary", "1.3.1"
 gem "jquery-fileupload-rails"
 gem "coffee-rails"
+gem "country_select"
 
 group :development, :test do
   gem 'binding_of_caller'
