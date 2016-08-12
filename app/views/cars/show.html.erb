@@ -3,7 +3,7 @@
 <p><%= @car.brand %> <%= @car.model %>, <%= @car.seats %> seats</p>
 <p>Made in: <%= @car.year_of_production.strftime('%Y')%></p>
 <p>Current Km: <%= @car.km %>.000</p>
-<p>Pickup: <%= @car.country %></p>
+<p>Pickup: <%= @car.country_name %></p>
 <p>Details: <%= @car.description %></p>
 <p>Price per day: <%= @car.price_per_day %> €</p>
 <% @car.photos.each do |photo| %>
