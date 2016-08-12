@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
 
-    <% if @cars.empty? %>
+   <% if @cars.empty? %>
     <h2>Sorry, none of our Vangabonds matched your queries</h2>
+    <%= link_to "Search again", root_path %>
     <% else %>
     <% @cars.each do |car| %>
 

@@ -19,6 +19,8 @@
         <%= f.button :submit, class: "vangabond-form-btn" %>
       </div>
     <% end %>
+    <br>
+    <%= link_to "All Vangabonds", cars_path %>
 
 
  <!--    <%#= simple_form_for :search, url: cars_path, method: :get, style: "width: 250px" do |f| %>
@@ -59,7 +61,7 @@
               <h2>Surf trip</h2>
               <p>Hit the beach in style</p>
             </div>
-            <a href="#" class="card-link"></a>
+            <%= link_to "", cars_path, {class: "card-link"} %>
           </div>
 
         </div>
@@ -75,7 +77,7 @@
               <h2>Camping</h2>
               <p>Explore nature with your family fully equipped</p>
             </div>
-            <a href="#" class="card-link"></a>
+            <%= link_to "", cars_path, {class: "card-link"} %>
           </div>
 
         </div>
@@ -91,7 +93,7 @@
               <h2>Adventure</h2>
               <p>Find the perfect van for the craziest trip</p>
             </div>
-            <a href="#" class="card-link"></a>
+            <%= link_to "", cars_path, {class: "card-link"} %>
           </div>
 
         </div>
