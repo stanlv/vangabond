@@ -1,15 +1,33 @@
-<h2><%= @car.brand %> <%= @car.model %></h2>
+<div class="container"
+  <div class="text-center">
+    <h1>
+      <%= @car.brand %> <%= @car.model %> For <%= @car.category.first %> trip </h2>
+    </h1>
+    <p>Available in <%= @car.country_name %> with <%= @car.seats %> seats For only <%= @car.price_per_day %> € per day </p>
+      <div class="row">
+        <% @car.photos.each do |photo| %>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img <%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+      <div class="text-center">
+        <p>
+          This van has been made in: <%= @car.year_of_production.strftime('%Y')%> and has today <%= @car.km %>.000 .
+        </p>
+        <p> Description : <%= @car.description %>
+        </p>
+  </div>
 
-<p><%= @car.brand %> <%= @car.model %>, <%= @car.seats %> seats</p>
-<p>Made in: <%= @car.year_of_production.strftime('%Y')%></p>
-<p>Current Km: <%= @car.km %>.000</p>
-<p>Pickup: <%= @car.country_name %></p>
-<p>Details: <%= @car.description %></p>
-<p>Price per day: <%= @car.price_per_day %> €</p>
-<% @car.photos.each do |photo| %>
-<%= cl_image_tag photo.path, width: 300, height: 200, crop: :fill %>
-<% end %>
-<%= link_to 'edit', edit_car_path(@car) %>
+  <div class="text-center">
+    <p>
+      <%= link_to 'edit', edit_car_path(@car), class:"btn btn-primary"  %>
+      <%= link_to 'Back to all', cars_path, class:"btn btn-default"  %>
+    </p>
+  </div>
 
-<%= link_to 'Back to all', cars_path %>
+
+
 
