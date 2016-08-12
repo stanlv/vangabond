@@ -3,7 +3,23 @@
     <h1>Vangabond</h1>
     <p>Rent a unique car for your next roadtrip</p>
 
-    <form action="#" class="form-inline">
+
+
+    <%= simple_form_for :search, url: cars_path, method: :get do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <%= f.country_select(:country) %>
+        <%= f.input :category, :collection => %w[Surf Family Camping WineTour Sightseeing Adventure] %>
+        <%= f.input :seats, collection: 1..9, input_html: {style: "width: 120px", class: "seats-select"} %>
+      </div>
+      <div class="form-actions">
+        <%= f.button :submit, class: "vangabond-form-btn" %>
+      </div>
+    <% end %>
+
+
+    <!-- <form action="#" class="form-inline">
     <input type="text" class="form-control input-lg" placeholder="Starting point" >
     <input type="text" class="form-control input-lg" placeholder="pickup" >
       <input type="text" class="form-control input-lg" placeholder="drop-off" >
@@ -19,7 +35,7 @@
         <option value="9">9 seats</option>
       </select>
       <input type="submit" class="btn btn-primary btn-lg" value="Search!">
-    </form>
+    </form> -->
   </div>
 </div>
 
