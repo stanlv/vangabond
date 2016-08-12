@@ -4,13 +4,15 @@
 
    <div class="col-xs-6 col-md-4">
     <div class="thumbnail">
-      <h3><strong>  In <%= car.location %> <%= car.category %> <%= car.brand %> <%= car.model %></strong>, <%= car.seats %> seats</h3>
+      <h3><strong> <%= car.brand %> <%= car.model %></strong>, <%= car.seats %> seats</h3>
       <img <%= cl_image_tag car.photos.first.path, width: 300, height: 200, crop: :fill %>
       <div class="caption">
-        <p>Made in : <%= car.year_of_production.strftime('%Y')%> </p>
+      <p> For <%= car.category.first %> </p>
+        <p> Available in <%= car.location %> </p>
+        <p> Made in : <%= car.year_of_production.strftime('%Y')%> </p>
         <p> Current Km : <%= car.km %>.000 Details: <%= car.description %> for <%= car.price_per_day %> € per day </p>
         <p>
-        <%= link_to 'See More', root_path , class:"btn btn-default" %>
+        <%= link_to 'See More', car_path(car) , class:"btn btn-default" %>
         <%= link_to 'Book Now', root_path, class:"btn btn-primary" %>
         </p>
       </div>
