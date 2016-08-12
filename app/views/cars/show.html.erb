@@ -1,9 +1,9 @@
 <div class="container"
-  <div class="text-center" >
+  <div class="text-center">
     <h1>
       <%= @car.brand %> <%= @car.model %> For <%= @car.category.first %> trip </h2>
     </h1>
-    <p>Available in <%= @car.location %> with <%= @car.seats %> seats For only <%= @car.price_per_day %> € per day </p
+    <p>Available in <%= @car.country_name %> with <%= @car.seats %> seats For only <%= @car.price_per_day %> € per day </p>
       <div class="row">
         <% @car.photos.each do |photo| %>
         <div class="col-sm-6 col-md-4">
@@ -17,7 +17,7 @@
         <p>
           This van has been made in: <%= @car.year_of_production.strftime('%Y')%> and has today <%= @car.km %>.000 .
         </p>
-        <p> Description<%= @car.description %>
+        <p> Description : <%= @car.description %>
         </p>
   </div>
 
@@ -27,5 +27,7 @@
       <%= link_to 'Back to all', cars_path, class:"btn btn-default"  %>
     </p>
   </div>
+
+
 
 

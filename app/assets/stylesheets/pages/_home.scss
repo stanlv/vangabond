@@ -12,7 +12,7 @@
 
  /* Banner design */
 .banner {
-  color: white;
+  color: #8EBCB2;
   text-align: center;
   height: calc(100vh - 70px);
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -27,9 +27,10 @@
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 .banner p {
-  font-size: 25px;
-  color: white;
+  font-size: 35px;
+  color: #e6f7ef;
   margin-bottom: 50px;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 
 }
 

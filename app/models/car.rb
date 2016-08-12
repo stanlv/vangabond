@@ -5,6 +5,8 @@ class Car < ActiveRecord::Base
   validates :photos, presence: true
   serialize :category
 
+
+# for search function
   def self.search(search)
     #binding.pry
     results = where.not(id: nil)
@@ -16,5 +18,13 @@ class Car < ActiveRecord::Base
     results = results.where(seats: search[:seats]) if search[:seats]
 
     results
+  end
+
+
+#to turn country_select country codes into actual country names
+
+  def country_name
+    country = ISO3166::Country[self.country]
+    country.name
   end
 end
